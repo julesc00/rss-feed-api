@@ -1,10 +1,14 @@
 import uuid
 
 from django.db import models
+from django.contrib.auth import get_user_model
+
+User = get_user_model()
 
 
 class Feed(models.Model):
     """Feed object."""
+    user = models.ForeignKey(User, related_name="user_feeds", on_delete=models.CASCADE)
     title = models.CharField(max_length=255, db_index=True)
     url = models.URLField()
 

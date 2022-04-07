@@ -1,3 +1,5 @@
+
+from rest_framework import serializers
 from rest_framework.serializers import ModelSerializer
 from rest_framework_simplejwt.serializers import TokenObtainSerializer
 
@@ -22,7 +24,7 @@ class FeedSerializer(ModelSerializer):
         fields = ("id", "title", "url")
 
 
-class ArticleSerializer(ModelSerializer):
+class ArticleSerializer(serializers.Serializer):
     """Serializer for the Article object."""
 
     class Meta:
@@ -30,4 +32,6 @@ class ArticleSerializer(ModelSerializer):
         fields = "__all__"
 
 
+class NewArticleCountSerializer(serializers):
+    new_article_count = serializers.IntegerField(min_value=0)
 
