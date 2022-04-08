@@ -35,3 +35,5 @@ class ArticleSerializer(serializers.Serializer):
 class NewArticleCountSerializer(serializers):
     new_article_count = serializers.IntegerField(min_value=0)
 
+    def count_articles =
+
