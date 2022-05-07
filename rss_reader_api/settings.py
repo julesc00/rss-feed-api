@@ -46,6 +46,7 @@ INSTALLED_APPS = [
 
     # Local apps
     "api.apps.ApiConfig",
+    "news.apps.NewsConfig",
 ]
 
 MIDDLEWARE = [

@@ -8,6 +8,7 @@ from rest_framework_simplejwt.views import (TokenObtainPairView,
 urlpatterns = [
     path('admin/', admin.site.urls),
     path("api/", include("api.urls")),
+    path("news/", include("news.urls")),
 
     # JWT
     path("api/token/", TokenObtainPairView.as_view(), name="token_obtain_pair"),
